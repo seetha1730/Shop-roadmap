@@ -1,0 +1,26 @@
+<div class="container">
+<div class="row">
+    <h2>Available Products</h2>
+    <div>
+<a class="btn btn-success col-lg-3 col-md-3 mr-2 mb-4" href="/products/create" >Create product</a>
+</div>
+{{#each productList}}
+ 
+<div class="card product-list col-lg-12 col-md-12">
+    <img src="{{this.image}}">
+    
+    <p class="heading">Name: {{this.name}}</p>
+   
+    <p>quantity: {{this.quantity}}</p>
+   
+ 
+    <p> Price: ${{this.price}}</p></li>
+    <input type="checkbox" name="checkbox"/>
+<div class="edit-delete-btn">
+<a class="btn btn-warning mr-2" href="products/{{_id}}/edit" >Edit Product</a>
+<form   action="/products/{{_id}}/delete" method="POST">
+        <button class="btn btn-danger ml-2" type="submit">Delete</button>
+         </form>
+</div>
+</div> 
+{{/each}}
